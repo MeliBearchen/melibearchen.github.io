@@ -42,6 +42,7 @@
       .reloadBtn {
         position: absolute;
         top: 110px;
+        right: 5%;
         z-index: 999;
         padding: 8px 30px;
         font-size: 18px;
@@ -52,8 +53,9 @@
       }
       .rBtn {
         position: absolute;
-        top: 160px;
         z-index: 999;
+        top: 110px;
+        left: 5%;
         padding: 8px 30px;
         font-size: 18px;
         font-family: 'Poppins', sans-serif;
@@ -1277,13 +1279,22 @@
       .not-loaded * {
         animation-play-state: paused !important;
       }
+      img{
+       z-index: -999999;
+       width:  75%;
+       height: 75%;
+       margin-bottom: 5%;
+      }
     </style>
   </head>
 
   <body class="not-loaded">
     <h1 class="title">Melibär's Blumen</h1>
     <button class="reloadBtn" onclick="bloomFlower()">Blume zeigen</button>
-    <button class="rBtn" onclick="bloomFlower()">Erinnerung zeigen</button>
+    <button class="rBtn" onclick="random()">Erinnerung zeigen</button>
+    <img id="bild" src="Bild_5.png">
+
+    <div id="demo">Test</div>
     <div class="night"></div>
     <div class="flowers">
       <div class="flower flower--1">
@@ -1598,12 +1609,27 @@
     <script>
 
       function bloomFlower() {
+        var srcbild = document.getElementById("bild");
+        srcbild.style.zIndex= -1;
+        srcbild.style.height="0px";
+        srcbild.style.width="0px";
           if (document.body.classList.contains('not-loaded')) {
               document.body.classList.remove("not-loaded");
               document.querySelector('.reloadBtn').textContent = 'Nochmal';
           } else {
             location.reload();
           }
+      }
+      function random(){
+        let zahl1;
+        var srcbild;
+        let leaege = 14;
+        zahl1 = Math.floor( Math.random() * leaege + 1 );
+        var srcbild = document.getElementById("bild");
+        srcbild.style.zIndex = 999999999;
+        srcbild.style.height="75%";
+        srcbild.style.width="75%";
+        srcbild.src = "Bild_"+zahl1+".png";
       }
 
     </script>
