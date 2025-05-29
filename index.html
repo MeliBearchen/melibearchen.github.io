@@ -50,6 +50,18 @@
         border-radius: 5px;
         border: none;
         cursor: pointer;
+}
+      .bdBtn {
+        position: absolute;
+        top: 110px;
+        right: 40%;
+        z-index: 999;
+        padding: 8px 30px;
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
       }
       .rBtn {
         position: absolute;
@@ -1291,7 +1303,7 @@
   <body class="not-loaded">
     <h1 class="title">Melibär's Blumen</h1>
     <button class="reloadBtn" onclick="bloomFlower()">Blume</button>
-    <button class="rBtn" onclick="random()">Erinnerung zeigen</button>
+    <button class="rBtn" onclick="random()">Geburtstag</button>
     <img id="bild" src="Bild_5.png">
 
     <div id="demo">Test</div>
@@ -1621,15 +1633,7 @@
           }
       }
       function random(){
-        let zahl1;
-        var srcbild;
-        let leaege = 22;
-        zahl1 = Math.floor( Math.random() * leaege + 1 );
-        var srcbild = document.getElementById("bild");
-        srcbild.style.zIndex = 999999999;
-        srcbild.style.height="75%";
-        srcbild.style.width="75%";
-        srcbild.src = "Bild ("+zahl1+").png";
+        window.location.href = "Geburtstag/index.html";
       }
 
     </script>
