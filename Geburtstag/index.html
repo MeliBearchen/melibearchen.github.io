@@ -28,8 +28,22 @@
       border-radius: 4px;
     }
   </style>
+<script>
+  function checkAccess() {
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth() + 1; // Monate sind 0-indexiert
+
+    if (day === 12 && month === 6) return;
+
+    let pw = prompt("Zutritt nur mit Passwort: ");
+    if (pw !== "Erdani31032000!") {
+      document.body.innerHTML = "<h2 style='color: red; text-align: center;'>Zutritt verweigert.</h2>";
+    }
+  }
+</script>
 </head>
-<body>
+<body onload="checkAccess()">
   <h1>Rätsel 1‑4</h1>
 
   <div class="raetsel">
@@ -101,7 +115,7 @@
     </ul>
 
     <p><em>Finde heraus, wer keine Alibis hat und lügt. Notiere den ersten Buchstaben des Vornamens der tätigen Person.</em></p>
-<p>Auf dem Tisch liegt ein verschlossener Umschlag mit weiteren Beweisen und Fotos – öffne ihn</p>
+<p>Auf dem Tisch liegt ein verschlossener Umschlag mit weiteren Beweisen und Fotos – öffne ihn, wenn du nicht weiterweißt.</p>
   </div>
 
 <div style="text-align:center; margin-top: 30px;">
