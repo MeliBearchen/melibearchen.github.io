@@ -34,16 +34,23 @@
     const day = today.getDate();
     const month = today.getMonth() + 1; // Monate sind 0-indexiert
 
-    if (day === 12 && month === 6) return;
+    if (day === 12 && month === 6) {
+      document.body.style.filter = "none";
+      document.body.style.pointerEvents = "auto";
+      return;
+    }
 
     let pw = prompt("Zutritt nur mit Passwort: ");
     if (pw !== "Erdani31032000!") {
       document.body.innerHTML = "<h2 style='color: red; text-align: center;'>Zutritt verweigert.</h2>";
+    } else {
+      document.body.style.filter = "none";
+      document.body.style.pointerEvents = "auto";
     }
   }
 </script>
 </head>
-<body onload="checkAccess()">
+<body onload="checkAccess()" style="filter: blur(8px); pointer-events: none;">
   <h1>Rätsel 1‑4</h1>
 
   <div class="raetsel">
